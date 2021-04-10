@@ -12,9 +12,10 @@ function makeGrid(height, width) {
         let row = canvas.insertRow(y);
         for (let x = 0; x < width; x++) {
             let cell = row.insertCell(x);
-            // color the box whenever there is a mousedown / contextmenu event
+            // color the box whenever there is a mousedown event
             cell.addEventListener("mousedown", function(evt) {
                 cell.style.backgroundColor = color.value;
+            // uncolor the box whenever there is a contextmenu event
             cell.addEventListener("contextmenu", function(evt) {
                 evt.preventDefault();
                 cell.style.backgroundColor = "white";
